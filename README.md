@@ -4,7 +4,7 @@ A PHP client library for [simplexpush.com](http://simplexpush.com), the realtime
 
 ## Documentation
 
-Visit http://simplexpush.com/ for a complete API reference and more examples.
+Visit [simplexpush.com](http://simplexpush.com/docs/index/) for a complete API reference and more examples.
 
 ## Installation
 
