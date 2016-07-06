@@ -1,4 +1,4 @@
-[SimplexPush](http://simplexpush.com/)
+## [SimplexPush](http://simplexpush.com/)
 
 A PHP client library for [simplexpush.com](http://simplexpush.com), the realtime messaging service.
 
