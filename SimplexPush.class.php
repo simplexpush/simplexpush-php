@@ -7,9 +7,21 @@ class SimplexPush {
 	const HTTP_OK = 200;
 	const HTTP_CREATED = 201;
 	const HTTP_ACEPTED = 202;
+	
+	const SIMPLEX_PUSH_URL = 'http://127.0.0.1:8080/api/';
+	
+	function __construct($secret_key) {
+		$this->secret_key = $secret_key;
+	}
 
-	public function _exec($type, $url, $params = array()) {
-		$headers = array('Content-type' => 'Application/json'); //$this->_headers;
+	public function publish($event, array $params) {
+		if (!is_string($event)) {
+		}
+		$to_send = array('pk'=>$this->secret_key, 'e'=>$event);
+        $out = $this->_exec(SimplexPush::POST, SimplexPush::SIMPLEX_PUSH_URL, $to_send);
+	}
+
+	public function _exec($type, $url, $params=array(), $headers=array()) {
 	    $s = curl_init();
 	 	curl_setopt($s, CURLINFO_HEADER_OUT, true);
 	    switch ($type) {
@@ -20,7 +32,7 @@ class SimplexPush {
 			case self::POST:
 				curl_setopt($s, CURLOPT_URL, $url);
 				curl_setopt($s, CURLOPT_POST, true);
-				curl_setopt($s, CURLOPT_POSTFIELDS, $params);
+				curl_setopt($s, CURLOPT_POSTFIELDS, json_encode($params));
 				break;
 			case self::GET:
 				curl_setopt($s, CURLOPT_URL, $url . '?' . http_build_query($params));
@@ -43,7 +55,6 @@ class SimplexPush {
 		default:
             echo 'error!';
 	    }
-        print($out);
 	    return $out;
 	}
 }

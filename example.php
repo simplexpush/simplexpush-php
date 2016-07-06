@@ -1,5 +1,10 @@
 <?php
 require_once('SimplexPush.class.php');
-$simplex = new SimplexPush();
-$simplex->_exec(SimplexPush::GET, 'http://nexus.simplexpush.com/api/');
+
+$simplex = new SimplexPush('');
+
+$simplex->publish('test', array('param1'=>'1'));
+
 echo "Ok\r\n";
+
+
