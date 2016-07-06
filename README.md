@@ -11,5 +11,5 @@ Visit http://simplexpush.com/ for a complete API reference and more examples.
 Just download this repository and include files on your project.
 
 ```php
-require_once __DIR__ . 'SimplexPush.class.php';
+require_once __DIR__ . '/SimplexPush.class.php';
 ```
