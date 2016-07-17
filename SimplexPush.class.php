@@ -8,7 +8,8 @@ class SimplexPush {
 	const HTTP_CREATED = 201;
 	const HTTP_ACEPTED = 202;
 	
-	const SIMPLEX_PUSH_URL = 'http://127.0.0.1:8080/api/';
+	//const SIMPLEX_PUSH_URL = 'http://127.0.0.1:8080/api/';
+	const SIMPLEX_PUSH_URL = 'http://nexus.simplexpush.com/api/';
 	
 	function __construct($secret_key) {
 		$this->secret_key = $secret_key;
