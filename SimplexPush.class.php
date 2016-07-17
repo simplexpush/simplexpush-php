@@ -17,7 +17,7 @@ class SimplexPush {
 	public function publish($event, array $params) {
 		if (!is_string($event)) {
 		}
-		$to_send = array('pk'=>$this->secret_key, 'e'=>$event);
+		$to_send = array('pk'=>$this->secret_key, 'events'=>array(array($event, $params)));
         $out = $this->_exec(SimplexPush::POST, SimplexPush::SIMPLEX_PUSH_URL, $to_send);
 	}
 
